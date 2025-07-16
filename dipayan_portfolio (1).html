@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dipayan Guha | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Sora', sans-serif;
+      }
+      .glow-button {
+        background: linear-gradient(90deg, #7f00ff, #e100ff);
+        box-shadow: 0 0 10px #7f00ff, 0 0 20px #e100ff;
+        transition: all 0.3s ease-in-out;
+      }
+      .glow-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #7f00ff, 0 0 30px #e100ff;
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white scroll-smooth">
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-gray-900 bg-opacity-80 shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-lg md:text-xl font-bold text-purple-400">Dipayan</h1>
+        <nav class="space-x-4 text-sm md:text-base">
+          <a href="#" class="text-white hover:text-purple-400 transition">Home</a>
+          <a href="#about" class="text-white hover:text-purple-400 transition">About</a>
+          <a href="#skills" class="text-white hover:text-purple-400 transition">Skills</a>
+          <a href="#projects" class="text-white hover:text-purple-400 transition">Projects</a>
+          </nav>
+      </div>
+    </header>
+    <div class="pt-0">
+    <!-- Hero Section -->
+    
+
+    <!-- About Me -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-32 pb-12 relative overflow-hidden" id="home">
+      <div class="absolute w-[22rem] h-[22rem] bg-purple-700 rounded-full blur-3xl opacity-30 animate-pulse top-6 left-6"></div>
+      <h1 class="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-down">Hi, I’m <span class="text-purple-500">Dipayan Guha</span></h1>
+      <p class="text-xl md:text-2xl text-gray-300 mb-8" data-aos="fade-up">Frontend Developer | ML Enthusiast | Problem Solver</p>
+      <div class="space-x-4" data-aos="zoom-in">
+        <a href="/path/to/resume.pdf" target="_blank" class="px-6 py-2 rounded-lg glow-button">Download Resume</a>
+        
+        
+      </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="py-12 px-6 max-w-4xl mx-auto text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-semibold mb-4">About Me</h2>
+      <p class="text-gray-300 text-lg">
+        I'm a BCA student passionate about building scalable software systems with a strong interest in AI and Frontend-development.
+        I’ve interned in machine learning roles, and I love creating tools that solve real-world problems.
+      </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-800 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-semibold text-center mb-10" data-aos="fade-up">Skills</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-center">
+      <div class="group bg-gradient-to-br from-purple-600 to-indigo-600 p-5 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300" data-aos="zoom-in">
+        <p class="text-white text-lg font-bold group-hover:scale-110 transform transition">Python</p>
+      </div>
+      <div class="group bg-gradient-to-br from-pink-600 to-purple-500 p-5 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300" data-aos="zoom-in">
+        <p class="text-white text-lg font-bold group-hover:scale-110 transform transition">JavaScript</p>
+      </div>
+      <div class="group bg-gradient-to-br from-blue-600 to-cyan-500 p-5 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300" data-aos="zoom-in">
+        <p class="text-white text-lg font-bold group-hover:scale-110 transform transition">HTML & CSS</p>
+      </div>
+      <div class="group bg-gradient-to-br from-green-600 to-emerald-500 p-5 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300" data-aos="zoom-in">
+        <p class="text-white text-lg font-bold group-hover:scale-110 transform transition">C Programming</p>
+      </div>
+      <div class="group bg-gradient-to-br from-yellow-500 to-orange-500 p-5 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300" data-aos="zoom-in">
+        <p class="text-white text-lg font-bold group-hover:scale-110 transform transition">Machine Learning</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-semibold text-center mb-10" data-aos="fade-up">Projects</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gradient-to-tr from-purple-700 to-pink-500 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300" data-aos="flip-left">
+          <h3 class="text-xl font-bold mb-2 text-white">AutoMentor</h3>
+          <p class="text-white mb-4">AI learning assistant with quiz generation and feedback.</p>
+          <a href="https://github.com/Dipayan342/AI-mentor" target="_blank" class="text-white underline">GitHub →</a>
+        </div>
+        <div class="bg-gradient-to-tr from-purple-700 to-pink-500 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300" data-aos="flip-left">
+          <h3 class="text-xl font-bold mb-2 text-white">Fake News Detector</h3>
+          <p class="text-white mb-4">Web tool for NLP-based fake news classification.</p>
+          <a href="https://github.com/Dipayan342/fake-news-detection" target="_blank" class="text-white underline">GitHub →</a>
+        </div>
+        <div class="bg-gradient-to-tr from-purple-700 to-pink-500 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300" data-aos="flip-left">
+          <h3 class="text-xl font-bold mb-2 text-white">Glassbox AI</h3>
+          <p class="text-white mb-4">Career assistant for resume analysis and interview tips.</p>
+          <a href="https://github.com/Dipayan342/glassbox" target="_blank" class="text-white underline">GitHub →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+<section id="certificates" class="py-20 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+  <h2 class="text-4xl font-bold text-center text-purple-400 mb-12">My Certificates</h2>
+  <div class="space-y-8">
+    <div class="relative bg-gradient-to-r from-purple-800 to-indigo-800 p-6 rounded-xl shadow-xl transition transform hover:scale-[1.02]">
+      <div class="text-white text-lg font-semibold">Frontend Development</div>
+      <p class="text-gray-300">Issued by OneRoadmap</p>
+      <a href="https://oneroadmap.io/skills/frontend/certificate/CERT-9F71F722" target="_blank" class="inline-block mt-2 text-sm text-purple-300 underline hover:text-purple-100 transition">View Certificate →</a>
+    </div>
+    <div class="relative bg-gradient-to-r from-indigo-800 to-purple-800 p-6 rounded-xl shadow-xl transition transform hover:scale-[1.02]">
+      <div class="text-white text-lg font-semibold">AWS Certified Machine Learning – Specialty</div>
+      <p class="text-gray-300">Issued by Amazon Web Services (AWS)</p>
+      <a href="https://www.linkedin.com/in/dipayan-guha-152172265/details/certifications/1749836975104/single-media-viewer/?profileId=ACoAAED8YU4BeROdDLOdtR26W5yUQPAQe6u7294" target="_blank" class="inline-block mt-2 text-sm text-purple-300 underline hover:text-purple-100 transition">View Certificate →</a>
+    </div>
+    <div class="relative bg-gradient-to-r from-purple-800 to-pink-700 p-6 rounded-xl shadow-xl transition transform hover:scale-[1.02]">
+      <div class="text-white text-lg font-semibold">AWS Certified DevOps</div>
+      <p class="text-gray-300">Issued by Amazon Web Services (AWS)</p>
+      <a href="https://www.linkedin.com/in/dipayan-guha-152172265/details/certifications/1751534851034/single-media-viewer/?profileId=ACoAAED8YU4BeROdDLOdtR26W5yUQPAQe6u7294" target="_blank" class="inline-block mt-2 text-sm text-purple-300 underline hover:text-purple-100 transition">View Certificate →</a>
+    </div>
+    <div class="relative bg-gradient-to-r from-purple-900 to-blue-700 p-6 rounded-xl shadow-xl transition transform hover:scale-[1.02]">
+      <div class="text-white text-lg font-semibold">Generative AI</div>
+      <p class="text-gray-300">Issued by Microsoft</p>
+      <a href="https://learn.microsoft.com/en-us/users/dipayanguha-2840/achievements/h7b9feg8?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" class="inline-block mt-2 text-sm text-purple-300 underline hover:text-purple-100 transition">View Certificate →</a>
+    </div>
+  </div>
+</section>
+
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-semibold mb-6">Get in Touch</h2>
+      <p class="text-gray-400 mb-6">I’d love to connect and discuss opportunities or collaborations.</p>
+      <div class="space-y-4">
+        <p><span class="font-semibold text-purple-400">Phone:</span> +91-8436805790</p>
+        <p><span class="font-semibold text-purple-400">Email:</span> <a href="mailto:dipayanguha183@gmail.com" class="underline text-purple-300">dipayanguha183@gmail.com</a></p>
+        <p><span class="font-semibold text-purple-400">Location:</span> Siliguri, India</p>
+        <div class="flex justify-center space-x-6 mt-4">
+          <a href="https://github.com/Dipayan342" target="_blank" class="hover:text-purple-400 transition">GitHub</a>
+          <a href="https://www.linkedin.com/in/dipayan-guha-152172265/" target="_blank" class="hover:text-purple-400 transition">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-center py-6">
+      <p class="text-gray-500">© 2025 Dipayan Guha — Built with HTML, TailwindCSS & AOS</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true });
+    </script>
+      </div>
+  </body>
+</html>
