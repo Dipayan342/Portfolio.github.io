@@ -9,135 +9,299 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
       body {
         font-family: 'Sora', sans-serif;
+        cursor: default;
+        position: relative;
       }
+
+      #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+      }
+
       .glow-button {
         background: linear-gradient(90deg, #7f00ff, #e100ff);
         box-shadow: 0 0 10px #7f00ff, 0 0 20px #e100ff;
         transition: all 0.3s ease-in-out;
       }
+
       .glow-button:hover {
         transform: scale(1.05);
         box-shadow: 0 0 20px #7f00ff, 0 0 30px #e100ff;
       }
+
+      .navbar {
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled {
+        background: rgba(17, 24, 39, 0.95);
+      }
+
+      .skill-card {
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+      }
+
+      .skill-card:hover {
+        transform: rotateY(10deg) rotateX(10deg);
+      }
+
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+      }
+
+      .typing-effect {
+        border-right: 3px solid;
+        animation: typing 3.5s steps(40, end), blink .75s step-end infinite;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+
+      @keyframes blink {
+        from, to { border-color: transparent }
+        50% { border-color: #a855f7 }
+      }
+
+      .project-card {
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 30px -15px rgba(127, 0, 255, 0.3);
+      }
+
+
     </style>
   </head>
   <body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white scroll-smooth">
-    <!-- Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-gray-900 bg-opacity-80 shadow-lg">
+    <div id="particles-js"></div>
+    <div class="content">
+
+    <header class="navbar fixed top-0 left-0 w-full z-50 shadow-lg transition-all duration-300">
       <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 class="text-lg md:text-xl font-bold text-purple-400">Dipayan</h1>
-        <nav class="space-x-4 text-sm md:text-base">
-          <a href="#" class="text-white hover:text-purple-400 transition">Home</a>
-          <a href="#about" class="text-white hover:text-purple-400 transition">About</a>
-          <a href="#skills" class="text-white hover:text-purple-400 transition">Skills</a>
-          <a href="#projects" class="text-white hover:text-purple-400 transition">Projects</a>
-          </nav>
+        <h1 class="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 animate__animated animate__fadeIn">Dipayan</h1>
+        <nav class="space-x-6 text-sm md:text-base">
+          <a href="#" class="text-white hover:text-purple-400 transition-all duration-300 hover:scale-110 inline-block">Home</a>
+          <a href="#about" class="text-white hover:text-purple-400 transition-all duration-300 hover:scale-110 inline-block">About</a>
+          <a href="#skills" class="text-white hover:text-purple-400 transition-all duration-300 hover:scale-110 inline-block">Skills</a>
+          <a href="#projects" class="text-white hover:text-purple-400 transition-all duration-300 hover:scale-110 inline-block">Projects</a>
+        </nav>
       </div>
     </header>
     <div class="pt-0">
-    <!-- Hero Section -->
-    
 
-    <!-- About Me -->
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-32 pb-12 relative overflow-hidden" id="home">
-      <div class="absolute w-[22rem] h-[22rem] bg-purple-700 rounded-full blur-3xl opacity-30 animate-pulse top-6 left-6"></div>
-      <h1 class="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-down">Hi, I’m <span class="text-purple-500">Dipayan Guha</span></h1>
-      <p class="text-xl md:text-2xl text-gray-300 mb-8" data-aos="fade-up">Frontend Developer | ML Enthusiast | Problem Solver</p>
-      <div class="space-x-4" data-aos="zoom-in">
-        <a href="/path/to/resume.pdf" target="_blank" class="px-6 py-2 rounded-lg glow-button">Download Resume</a>
-        
-        
+      <div class="absolute w-[30rem] h-[30rem] bg-purple-700 rounded-full blur-[100px] opacity-20 animate-pulse top-0 left-0"></div>
+      <div class="absolute w-[25rem] h-[25rem] bg-blue-700 rounded-full blur-[100px] opacity-20 animate-pulse bottom-0 right-0"></div>
+      
+      <div class="animate__animated animate__fadeInDown">
+        <h1 class="text-5xl md:text-7xl font-bold mb-4 typing-effect">
+          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Dipayan Guha</span>
+        </h1>
       </div>
-    </section>
-
-    <!-- About Me -->
-    <section id="about" class="py-12 px-6 max-w-4xl mx-auto text-center" data-aos="fade-up">
-      <h2 class="text-3xl font-semibold mb-4">About Me</h2>
-      <p class="text-gray-300 text-lg">
-        I'm a BCA student passionate about building scalable software systems with a strong interest in AI and Frontend-development.
-        I’ve interned in machine learning roles, and I love creating tools that solve real-world problems.
+      
+      <p class="text-xl md:text-2xl text-gray-300 mb-8 animate__animated animate__fadeInUp animate__delay-1s">
+        <span class="inline-block floating">Frontend Developer</span> | 
+        <span class="inline-block floating" style="animation-delay: 0.2s">ML Enthusiast</span> | 
+        <span class="inline-block floating" style="animation-delay: 0.4s">Problem Solver</span>
       </p>
+      
+      <div class="space-x-6 animate__animated animate__zoomIn animate__delay-2s">
+          <a href="DipayanGuha_CV.pdf" target="_blank" 
+             class="px-8 py-3 rounded-lg glow-button inline-flex items-center gap-2 text-lg group">
+            <span>Download Resume</span>
+            <svg class="w-5 h-5 transform group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+        </a>
+      </div>
+      
+      <div class="absolute bottom-8 animate-bounce">
+        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+      </div>
+    </section>
+    <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center relative" data-aos="fade-up">
+      <div class="absolute w-[20rem] h-[20rem] bg-purple-600 rounded-full blur-[100px] opacity-10 -z-10"></div>
+      
+      <h2 class="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+        About Me
+      </h2>
+      
+      <div class="bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-2xl p-8 shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
+        <p class="text-gray-300 text-lg leading-relaxed">
+          I'm a BCA student passionate about building scalable software systems with a strong interest in AI and Frontend-development.
+          I've interned in machine learning roles, and I love creating tools that solve real-world problems.
+        </p>
+        
+        <div class="mt-8 flex justify-center gap-6">
+          <div class="text-center">
+            <h3 class="text-3xl font-bold text-purple-400">2+</h3>
+            <p class="text-gray-400">Years Experience</p>
+          </div>
+          <div class="text-center">
+            <h3 class="text-3xl font-bold text-purple-400">10+</h3>
+            <p class="text-gray-400">Projects</p>
+          </div>
+          <div class="text-center">
+            <h3 class="text-3xl font-bold text-purple-400">5+</h3>
+            <p class="text-gray-400">Certifications</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-800 px-6">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-semibold text-center mb-10" data-aos="fade-up">Skills</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-center">
-      <div class="group bg-gradient-to-br from-purple-600 to-indigo-600 p-5 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300" data-aos="zoom-in">
-        <p class="text-white text-lg font-bold group-hover:scale-110 transform transition">Python</p>
-      </div>
-      <div class="group bg-gradient-to-br from-pink-600 to-purple-500 p-5 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300" data-aos="zoom-in">
-        <p class="text-white text-lg font-bold group-hover:scale-110 transform transition">JavaScript</p>
-      </div>
-      <div class="group bg-gradient-to-br from-blue-600 to-cyan-500 p-5 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300" data-aos="zoom-in">
-        <p class="text-white text-lg font-bold group-hover:scale-110 transform transition">HTML & CSS</p>
-      </div>
-      <div class="group bg-gradient-to-br from-green-600 to-emerald-500 p-5 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300" data-aos="zoom-in">
-        <p class="text-white text-lg font-bold group-hover:scale-110 transform transition">C Programming</p>
-      </div>
-      <div class="group bg-gradient-to-br from-yellow-500 to-orange-500 p-5 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300" data-aos="zoom-in">
-        <p class="text-white text-lg font-bold group-hover:scale-110 transform transition">Machine Learning</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <section id="skills" class="py-20 px-6 relative">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent"></div>
+      <div class="max-w-6xl mx-auto relative">
+        <h2 class="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500" data-aos="fade-up">
+          Skills & Expertise
+        </h2>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 text-center">
+          <div class="skill-card bg-gray-800 bg-opacity-50 backdrop-blur-lg p-6 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-purple-500/20" data-aos="flip-left" data-aos-delay="100">
+            <div class="icon-wrapper mb-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-16 h-16 mx-auto" alt="Python"/>
+            </div>
+            <p class="text-white text-lg font-bold">Python</p>
+            <div class="mt-2 w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card bg-gray-800 bg-opacity-50 backdrop-blur-lg p-6 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-purple-500/20" data-aos="flip-left" data-aos-delay="200">
+            <div class="icon-wrapper mb-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-16 h-16 mx-auto" alt="JavaScript"/>
+            </div>
+            <p class="text-white text-lg font-bold">JavaScript</p>
+            <div class="mt-2 w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card bg-gray-800 bg-opacity-50 backdrop-blur-lg p-6 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-purple-500/20" data-aos="flip-left" data-aos-delay="300">
+            <div class="icon-wrapper mb-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16 h-16 mx-auto" alt="HTML & CSS"/>
+            </div>
+            <p class="text-white text-lg font-bold">HTML & CSS</p>
+            <div class="mt-2 w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card bg-gray-800 bg-opacity-50 backdrop-blur-lg p-6 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-purple-500/20" data-aos="flip-left" data-aos-delay="400">
+            <div class="icon-wrapper mb-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" class="w-16 h-16 mx-auto" alt="C Programming"/>
+            </div>
+            <p class="text-white text-lg font-bold">C Programming</p>
+            <div class="mt-2 w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card bg-gray-800 bg-opacity-50 backdrop-blur-lg p-6 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-purple-500/20" data-aos="flip-left" data-aos-delay="500">
+            <div class="icon-wrapper mb-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="w-16 h-16 mx-auto" alt="Machine Learning"/>
+            </div>
+            <p class="text-white text-lg font-bold">Machine Learning</p>
+            <div class="mt-2 w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
 
-    <!-- Projects Section -->
+          <div class="skill-card bg-gray-800 bg-opacity-50 backdrop-blur-lg p-6 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-purple-500/20" data-aos="flip-left" data-aos-delay="600">
+            <div class="icon-wrapper mb-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" class="w-16 h-16 mx-auto" alt="MySQL"/>
+            </div>
+            <p class="text-white text-lg font-bold">MySQL</p>
+            <div class="mt-2 w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+
+          <div class="skill-card bg-gray-800 bg-opacity-50 backdrop-blur-lg p-6 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-purple-500/20" data-aos="flip-left" data-aos-delay="700">
+            <div class="icon-wrapper mb-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-16 h-16 mx-auto" alt="TypeScript"/>
+            </div>
+            <p class="text-white text-lg font-bold">TypeScript</p>
+            <div class="mt-2 w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="projects" class="py-20 px-6 max-w-6xl mx-auto">
       <h2 class="text-3xl font-semibold text-center mb-10" data-aos="fade-up">Projects</h2>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-gradient-to-tr from-purple-700 to-pink-500 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300" data-aos="flip-left">
+        <div class="bg-gradient-to-tr from-purple-700 to-pink-500 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 group" data-aos="flip-left">
           <h3 class="text-xl font-bold mb-2 text-white">AutoMentor</h3>
           <p class="text-white mb-4">AI learning assistant with quiz generation and feedback.</p>
-          <a href="https://github.com/Dipayan342/AI-mentor" target="_blank" class="text-white underline">GitHub →</a>
+          <div class="flex gap-4 items-center">
+            <a href="https://github.com/Dipayan342/AI-mentor" target="_blank" class="text-white hover:text-purple-200 transition flex items-center gap-1">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://jeetpaul1.github.io/AutoMentor-AI/" target="_blank" class="text-white hover:text-purple-200 transition flex items-center gap-1">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              Live Demo
+            </a>
+          </div>
         </div>
-        <div class="bg-gradient-to-tr from-purple-700 to-pink-500 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300" data-aos="flip-left">
+        <div class="bg-gradient-to-tr from-purple-700 to-pink-500 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 group" data-aos="flip-left">
           <h3 class="text-xl font-bold mb-2 text-white">Fake News Detector</h3>
           <p class="text-white mb-4">Web tool for NLP-based fake news classification.</p>
-          <a href="https://github.com/Dipayan342/fake-news-detection" target="_blank" class="text-white underline">GitHub →</a>
+          <a href="https://github.com/Dipayan342/fake-news-detection" target="_blank" class="text-white hover:text-purple-200 transition flex items-center gap-1">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
         </div>
-        <div class="bg-gradient-to-tr from-purple-700 to-pink-500 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300" data-aos="flip-left">
+        <div class="bg-gradient-to-tr from-purple-700 to-pink-500 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 group" data-aos="flip-left">
           <h3 class="text-xl font-bold mb-2 text-white">Glassbox AI</h3>
           <p class="text-white mb-4">Career assistant for resume analysis and interview tips.</p>
-          <a href="https://github.com/Dipayan342/glassbox" target="_blank" class="text-white underline">GitHub →</a>
+          <div class="flex gap-4 items-center">
+            <a href="https://github.com/Dipayan342/glassbox" target="_blank" class="text-white hover:text-purple-200 transition flex items-center gap-1">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://v0-glassbox-7oqpbl8zg-dipayan342s-projects.vercel.app/" target="_blank" class="text-white hover:text-purple-200 transition flex items-center gap-1">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              Live Demo
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Certificates Section -->
-<section id="certificates" class="py-20 px-6 max-w-4xl mx-auto" data-aos="fade-up">
-  <h2 class="text-4xl font-bold text-center text-purple-400 mb-12">My Certificates</h2>
-  <div class="space-y-8">
-    <div class="relative bg-gradient-to-r from-purple-800 to-indigo-800 p-6 rounded-xl shadow-xl transition transform hover:scale-[1.02]">
-      <div class="text-white text-lg font-semibold">Frontend Development</div>
-      <p class="text-gray-300">Issued by OneRoadmap</p>
-      <a href="https://oneroadmap.io/skills/frontend/certificate/CERT-9F71F722" target="_blank" class="inline-block mt-2 text-sm text-purple-300 underline hover:text-purple-100 transition">View Certificate →</a>
-    </div>
-    <div class="relative bg-gradient-to-r from-indigo-800 to-purple-800 p-6 rounded-xl shadow-xl transition transform hover:scale-[1.02]">
-      <div class="text-white text-lg font-semibold">AWS Certified Machine Learning – Specialty</div>
-      <p class="text-gray-300">Issued by Amazon Web Services (AWS)</p>
-      <a href="https://www.linkedin.com/in/dipayan-guha-152172265/details/certifications/1749836975104/single-media-viewer/?profileId=ACoAAED8YU4BeROdDLOdtR26W5yUQPAQe6u7294" target="_blank" class="inline-block mt-2 text-sm text-purple-300 underline hover:text-purple-100 transition">View Certificate →</a>
-    </div>
-    <div class="relative bg-gradient-to-r from-purple-800 to-pink-700 p-6 rounded-xl shadow-xl transition transform hover:scale-[1.02]">
-      <div class="text-white text-lg font-semibold">AWS Certified DevOps</div>
-      <p class="text-gray-300">Issued by Amazon Web Services (AWS)</p>
-      <a href="https://www.linkedin.com/in/dipayan-guha-152172265/details/certifications/1751534851034/single-media-viewer/?profileId=ACoAAED8YU4BeROdDLOdtR26W5yUQPAQe6u7294" target="_blank" class="inline-block mt-2 text-sm text-purple-300 underline hover:text-purple-100 transition">View Certificate →</a>
-    </div>
-    <div class="relative bg-gradient-to-r from-purple-900 to-blue-700 p-6 rounded-xl shadow-xl transition transform hover:scale-[1.02]">
-      <div class="text-white text-lg font-semibold">Generative AI</div>
-      <p class="text-gray-300">Issued by Microsoft</p>
-      <a href="https://learn.microsoft.com/en-us/users/dipayanguha-2840/achievements/h7b9feg8?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" class="inline-block mt-2 text-sm text-purple-300 underline hover:text-purple-100 transition">View Certificate →</a>
-    </div>
-  </div>
-</section>
 
-    
-
-    <!-- Contact Section -->
     <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center" data-aos="fade-up">
       <h2 class="text-3xl font-semibold mb-6">Get in Touch</h2>
       <p class="text-gray-400 mb-6">I’d love to connect and discuss opportunities or collaborations.</p>
@@ -152,15 +316,87 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-center py-6">
-      <p class="text-gray-500">© 2025 Dipayan Guha — Built with HTML, TailwindCSS & AOS</p>
+    <footer class="bg-gray-900 text-center py-8 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+      <div class="relative z-10">
+        <p class="text-gray-400 mb-4">Let's create something amazing together</p>
+        <p class="text-gray-500">© 2025 Dipayan Guha — Built with HTML, TailwindCSS & Modern Web Technologies</p>
+      </div>
     </footer>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-      AOS.init({ once: true });
+      AOS.init({
+        once: false,
+        duration: 800,
+        easing: 'ease-out-cubic'
+      });
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: '#8B5CF6' },
+          shape: { type: 'circle' },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: { enable: false }
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: { enable: false }
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: '#8B5CF6',
+            opacity: 0.2,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: 'none',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+            bounce: false
+          }
+        },
+        interactivity: {
+          detect_on: 'canvas',
+          events: {
+            onhover: { enable: true, mode: 'grab' },
+            onclick: { enable: true, mode: 'push' },
+            resize: true
+          },
+          modes: {
+            grab: { distance: 140, line_linked: { opacity: 0.5 } },
+            push: { particles_nb: 4 }
+          }
+        },
+        retina_detect: true
+      });
+
+      const navbar = document.querySelector('.navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
     </script>
-      </div>
   </body>
 </html>
